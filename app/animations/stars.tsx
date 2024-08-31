@@ -143,7 +143,12 @@ const Stars: React.FC = () => {
     if (canvas) startAnimation(canvas);
   }, []);
 
-  return <canvas id="stars" className="z-50 fixed w-full h-full" ></canvas>;
+  return (
+    <canvas
+      id="stars"
+      className="z-50 fixed w-full h-full  bg-background"
+    ></canvas>
+  );
 };
 
 export default Stars;

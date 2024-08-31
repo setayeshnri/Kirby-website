@@ -9,7 +9,15 @@ module.exports = {
   ],
   theme: {
     extend: {
-     
+      colors: {
+        background: "#2F2343",
+        primary: {
+          defaultPink: "#E3ABB6",
+        },
+      },
+      zIndex: {
+        100: "100",
+      },
     },
   },
   plugins: [nextui()],

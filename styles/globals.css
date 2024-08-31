@@ -7,3 +7,21 @@
   -webkit-font-smoothing: antialiased;
   text-rendering: optimizeLegibility
 }
+.zdog-canvas.fade-out {
+  opacity: 0;
+}
+
+
+
+
+.kirby.visible {
+  opacity: 1;
+}
+@keyframes moveRight {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(20vw) translateY(-12vw);
+  }
+}
