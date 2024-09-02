@@ -1,14 +1,14 @@
 "use client"
 import "@/styles/globals.css";
-import Stars from "./animations/stars";
-import FloatingKirby from "./animations/floatingKirby";
+import Home from "./page";
+
 export default function RootLayout() {
   return (
     <html suppressHydrationWarning lang="en">
       <head />
       <body>
-       <Stars/>
-       <FloatingKirby/>
+        <Home/>
+     
       </body>
     </html>
   );

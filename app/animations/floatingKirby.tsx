@@ -177,8 +177,6 @@ const FloatingKirby: React.FC = () => {
       rotate: { z: -1.1, y: 0.8 },
     });
 
-    // ----- umbrella ----- //
-
     const umbrella = new Zdog.Shape({
       path: [{ y: 0 }, { y: 22 }],
       addTo: rightArm,
@@ -312,7 +310,7 @@ const FloatingKirby: React.FC = () => {
       floaterStars.push(floaterStar);
     }
 
-    // ----- animate ----- //
+
 
     let animationId: number;
     function animate() {
@@ -323,28 +321,25 @@ const FloatingKirby: React.FC = () => {
 
     animate();
 
-    // ----- stop and hide after 3.5 seconds ----- //
 
     setTimeout(() => {
-      isSpinning = false; // Stop the spinning
-      cancelAnimationFrame(animationId); // Stop the animation loop
+      isSpinning = false; 
+      cancelAnimationFrame(animationId); 
       umbrella.removeChild(rightArm);
-      // Hide the umbrella and all its components
+    
       umbrella.visible = false;
       handle.visible = false;
 
       shields.forEach((shield) => (shield.visible = false));
       floaterStars.forEach((star) => (star.visible = false));
 
-      // Hide the umbrella handle
-
-      // If the star on top is a separate object, hide it as well
+      
       star.visible = false;
 
-      // Update the illustration
+      
       illo.updateRenderGraph();
 
-      // Fade out the Zdog canvas and fade in the CSS Kirby
+      
       const kirbyElement = kirbyRef.current;
       const zdogCanvas = canvasRef.current!;
       if (kirbyElement) {

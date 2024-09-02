@@ -10,12 +10,11 @@
 .zdog-canvas.fade-out {
   opacity: 0;
 }
-
-
-
-
 .kirby.visible {
   opacity: 1;
+}
+.firstPage.visibility{
+  opacity:1;
 }
 @keyframes moveRight {
   0% {
