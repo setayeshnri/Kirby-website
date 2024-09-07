@@ -1,14 +1,14 @@
-"use client"
 import "@/styles/globals.css";
-import Stars from "./animations/stars";
-import FloatingKirby from "./animations/floatingKirby";
-export default function RootLayout() {
+
+export default function RootLayout({
+  children,
+}: {
+  children: React.ReactNode;
+}) {
   return (
-    <html suppressHydrationWarning lang="en">
-      <head />
+    <html lang="en">
       <body>
-       <Stars/>
-       <FloatingKirby/>
+        <main>{children}</main>
       </body>
     </html>
   );

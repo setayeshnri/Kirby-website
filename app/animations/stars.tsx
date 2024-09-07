@@ -146,7 +146,7 @@ const Stars: React.FC = () => {
   return (
     <canvas
       id="stars"
-      className="z-50 fixed w-full h-full  bg-background"
+      className="absolute w-full h-[102vh] z-20  bg-background"
     ></canvas>
   );
 };

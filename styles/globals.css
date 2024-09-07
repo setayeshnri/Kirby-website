@@ -5,16 +5,15 @@
   margin: 0;
   box-sizing: border-box;
   -webkit-font-smoothing: antialiased;
-  text-rendering: optimizeLegibility
+  text-rendering: optimizeLegibility;
 }
 .zdog-canvas.fade-out {
   opacity: 0;
 }
-
-
-
-
 .kirby.visible {
+  opacity: 1;
+}
+.firstPage.visibility {
   opacity: 1;
 }
 @keyframes moveRight {
@@ -22,6 +21,30 @@
     transform: translateX(0);
   }
   100% {
-    transform: translateX(20vw) translateY(-12vw);
+    transform: translateX(15vw) translateY(-250px);
+  }
+}
+.button.clickBtn {
+  margin: auto;
+}
+
+@media (max-width: 1200px) {
+  @keyframes moveRight {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(15vw) translateY(-230px);
+    }
+  }
+}
+@media (max-width: 1024px) {
+  @keyframes moveRight {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(26vw) translateY(-16vw);
+    }
   }
 }

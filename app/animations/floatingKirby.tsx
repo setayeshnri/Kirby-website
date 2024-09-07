@@ -1,7 +1,7 @@
 import Image from "next/image";
 import { useEffect, useRef } from "react";
 import Zdog from "zdog";
-import KirbyPic from "../../public/Kirby.png";
+import KirbyPic from "../../public/home/Kirby.png";
 const FloatingKirby: React.FC = () => {
   const kirbyRef = useRef<HTMLDivElement>(null);
   const canvasRef = useRef<HTMLCanvasElement>(null);
@@ -177,8 +177,6 @@ const FloatingKirby: React.FC = () => {
       rotate: { z: -1.1, y: 0.8 },
     });
 
-    // ----- umbrella ----- //
-
     const umbrella = new Zdog.Shape({
       path: [{ y: 0 }, { y: 22 }],
       addTo: rightArm,
@@ -312,7 +310,7 @@ const FloatingKirby: React.FC = () => {
       floaterStars.push(floaterStar);
     }
 
-    // ----- animate ----- //
+
 
     let animationId: number;
     function animate() {
@@ -323,28 +321,25 @@ const FloatingKirby: React.FC = () => {
 
     animate();
 
-    // ----- stop and hide after 3.5 seconds ----- //
 
     setTimeout(() => {
-      isSpinning = false; // Stop the spinning
-      cancelAnimationFrame(animationId); // Stop the animation loop
+      isSpinning = false; 
+      cancelAnimationFrame(animationId); 
       umbrella.removeChild(rightArm);
-      // Hide the umbrella and all its components
+    
       umbrella.visible = false;
       handle.visible = false;
 
       shields.forEach((shield) => (shield.visible = false));
       floaterStars.forEach((star) => (star.visible = false));
 
-      // Hide the umbrella handle
-
-      // If the star on top is a separate object, hide it as well
+      
       star.visible = false;
 
-      // Update the illustration
+      
       illo.updateRenderGraph();
 
-      // Fade out the Zdog canvas and fade in the CSS Kirby
+      
       const kirbyElement = kirbyRef.current;
       const zdogCanvas = canvasRef.current!;
       if (kirbyElement) {
@@ -361,11 +356,11 @@ const FloatingKirby: React.FC = () => {
         ref={canvasRef}
       ></canvas>
       <div
-        className="kirby absolute top-[40%] right-[38%] margin-0 opacity-0 z-100 transition-opacity ease-in-out duration-[1s] transform translate-x-0 animate-[moveRight_3s_ease-in-out_4.5s_forwards] "
+        className="kirby flex absolute top-[40%] right-[38%] margin-0 opacity-0 z-40 transition-opacity ease-in-out duration-[1s] transform translate-x-0 animate-[moveRight_3s_ease-in-out_4.5s_forwards] "
         ref={kirbyRef}
       >
         <Image
-          className="kirbyPic w-[21vw] h-[22vw] transform -scale-x-100"
+          className="kirbyPic w-[24vw] max-lg:w-[30vw] h-[25vw] max-lg:h-[31vw] transform -scale-x-100 max-sm:opacity-0"
           src={KirbyPic}
           alt="picture of kirby"
         />
