@@ -49,7 +49,7 @@ export default function Page() {
           take on troublemakers.
         </p>
         <div className="  mt-[9vw] max-2xl:mt-[5vw] max-lg:mt-[11%] max-sm:relative max-sm:m-auto ">
-          <Link href="/about">
+          <Link href="/pages/about">
             {" "}
             <Button btnRef={btnRef} />
           </Link>

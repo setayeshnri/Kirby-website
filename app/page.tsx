@@ -1,11 +1,10 @@
 "use client";
 import Image from "next/image";
 import FirstPage from "./pages/firstPage/page";
-import SecondPage from "./secondPage/page";
-
+import SecondPage from "./pages/secondPage/page";
 import curve1 from "@/public/curve1.svg";
 import curve2 from "@/public/curve2.svg";
-export default function Home() {
+export default function HomePage() {
   return (
     <section className="flex flex-col overflow-x-hidden">
       <FirstPage />

@@ -3,7 +3,7 @@ import Image from "next/image";
 import cloud from "@/public/cloud.svg";
 import myGif from "@/public/gamegif.gif";
 import Button from "@/components/button";
-import Link from "next/link";
+
 import { useRef, useEffect } from "react";
 const Page = () => {
   const btnRef = useRef<HTMLButtonElement | null>(null);
@@ -16,11 +16,9 @@ const Page = () => {
   return (
     <div className="bg-[#F2D8DB] w-full h-[100vh] relative z-[1] mt-[-4px]">
       <div className="wave-border"></div>
-      <Link rel="stylesheet" href="/thirdPage">
-        <h3 className=" mt-24 mb-[-50px] text-3xl font-extrabold text-center">
-          Our Featured Game
-        </h3>
-      </Link>
+      <h3 className=" mt-24 mb-[-50px] text-3xl font-extrabold text-center">
+        Our Featured Game
+      </h3>
       <Image
         src={cloud}
         alt="cloud image"
