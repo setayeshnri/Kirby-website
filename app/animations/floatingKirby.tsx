@@ -1,7 +1,7 @@
 import Image from "next/image";
 import { useEffect, useRef } from "react";
 import Zdog from "zdog";
-import KirbyPic from "../../public/Kirby.png";
+import KirbyPic from "../../public/home/Kirby.png";
 const FloatingKirby: React.FC = () => {
   const kirbyRef = useRef<HTMLDivElement>(null);
   const canvasRef = useRef<HTMLCanvasElement>(null);
@@ -356,11 +356,11 @@ const FloatingKirby: React.FC = () => {
         ref={canvasRef}
       ></canvas>
       <div
-        className="kirby absolute top-[40%] right-[38%] margin-0 opacity-0 z-100 transition-opacity ease-in-out duration-[1s] transform translate-x-0 animate-[moveRight_3s_ease-in-out_4.5s_forwards] "
+        className="kirby flex absolute top-[40%] right-[38%] margin-0 opacity-0 z-40 transition-opacity ease-in-out duration-[1s] transform translate-x-0 animate-[moveRight_3s_ease-in-out_4.5s_forwards] "
         ref={kirbyRef}
       >
         <Image
-          className="kirbyPic w-[21vw] h-[22vw] transform -scale-x-100"
+          className="kirbyPic w-[24vw] max-lg:w-[30vw] h-[25vw] max-lg:h-[31vw] transform -scale-x-100 max-sm:opacity-0"
           src={KirbyPic}
           alt="picture of kirby"
         />

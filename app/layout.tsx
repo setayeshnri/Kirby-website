@@ -1,16 +1,13 @@
-"use client"
-import "@/styles/globals.css";
-import Home from "./page";
-import App from "@/components/navbar";
-
-export default function RootLayout() {
+export default function RootLayout({
+  children,
+}: {
+  children: React.ReactNode;
+}) {
   return (
-    <html suppressHydrationWarning lang="en">
-      <head />
+    <html lang="en">
       <body>
-        <App />
-        <Home />
-      </body>
+        <main>{children}</main>
+        </body>
     </html>
   );
 }
