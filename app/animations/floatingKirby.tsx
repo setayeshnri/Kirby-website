@@ -358,7 +358,7 @@ const FloatingKirby: React.FC = () => {
     <div className="wrapper flex justify-center">
       <canvas
         ref={canvasRef}
-        className="zdog-canvas absolute top-0 left-[0] w-full h-full block transition-opacity ease-out duration-[1s] z-100"
+        className="zdog-canvas absolute top-0 left-[0] w-full h-full block transition-opacity ease-out duration-[1s] z-[90]"
       />
       <div
         ref={kirbyRef}

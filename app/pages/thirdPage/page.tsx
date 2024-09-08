@@ -2,7 +2,7 @@ import styles from "@/styles/kirby.module.css";
 
 const Page = () => {
   return (
-    <div className="bg-[url('@/public/clouds.png')] h-[100vh] bg-cover flex flex-row justify-around mt-[-70px]">
+    <div className="bg-[url('/clouds.png')] h-[100vh] bg-cover flex flex-row justify-around mt-[-70px]">
       <div className="relative top-32 left-36 z-10 h-52">
         <div className={styles.body}>
           <div className={styles.face}>
