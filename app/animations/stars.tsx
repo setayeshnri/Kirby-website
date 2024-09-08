@@ -1,6 +1,5 @@
 import React, { useEffect } from "react";
 
-
 const Stars: React.FC = () => {
   useEffect(() => {
     const CONFIG = {
@@ -25,9 +24,11 @@ const Stars: React.FC = () => {
 
     const getRandomSize = () => {
       const random = Math.random();
+
       if (random < CONFIG.chances.small) return "small";
       if (random < CONFIG.chances.small + CONFIG.chances.medium)
         return "medium";
+
       return "big";
     };
 
@@ -97,7 +98,7 @@ const Stars: React.FC = () => {
 
     const scaleCanvasForRetina = (
       canvas: HTMLCanvasElement,
-      context: CanvasRenderingContext2D
+      context: CanvasRenderingContext2D,
     ) => {
       const pixelRatio = window.devicePixelRatio || 1;
       const width = canvas.offsetWidth * pixelRatio;
@@ -114,7 +115,7 @@ const Stars: React.FC = () => {
       const context = canvas.getContext("2d")!;
       const stars = Array.from(
         { length: CONFIG.count },
-        () => new Star(canvas)
+        () => new Star(canvas),
       );
 
       const animate = () => {
@@ -140,14 +141,15 @@ const Stars: React.FC = () => {
     };
 
     const canvas = document.getElementById("stars") as HTMLCanvasElement;
+
     if (canvas) startAnimation(canvas);
   }, []);
 
   return (
     <canvas
-      id="stars"
       className="absolute w-full h-[102vh] z-20  bg-background"
-    ></canvas>
+      id="stars"
+    />
   );
 };
 

@@ -1,10 +1,12 @@
 import Image from "next/image";
 import { useEffect, useRef } from "react";
 import Zdog from "zdog";
+
 import KirbyPic from "../../public/home/Kirby.png";
 const FloatingKirby: React.FC = () => {
   const kirbyRef = useRef<HTMLDivElement>(null);
   const canvasRef = useRef<HTMLCanvasElement>(null);
+
   useEffect(() => {
     const sceneSize = 80;
     let isSpinning = true;
@@ -190,6 +192,7 @@ const FloatingKirby: React.FC = () => {
       const path: Zdog.Vector[] = [];
       const starRadiusA = 3;
       const starRadiusB = 1.7;
+
       for (let i = 0; i < 10; i++) {
         const radius = i % 2 ? starRadiusA : starRadiusB;
         const angle = (TAU * i) / 10 + TAU / 4;
@@ -210,7 +213,7 @@ const FloatingKirby: React.FC = () => {
             throw new Error("Function not implemented.");
           },
           multiply: function (
-            position?: number | Zdog.VectorOptions
+            position?: number | Zdog.VectorOptions,
           ): Zdog.Vector {
             throw new Error("Function not implemented.");
           },
@@ -222,13 +225,15 @@ const FloatingKirby: React.FC = () => {
           },
           lerp: function (
             position: Zdog.VectorOptions,
-            alpha: number
+            alpha: number,
           ): Zdog.Vector {
             throw new Error("Function not implemented.");
           },
         };
+
         path.push(point);
       }
+
       return path;
     })();
 
@@ -268,6 +273,7 @@ const FloatingKirby: React.FC = () => {
     const shields: Zdog.Shape[] = [];
     const umbPanelX = 14 * Math.sin(TAU / 24);
     const umbPanelZ = 14 * Math.cos(TAU / 24);
+
     for (let i = 0; i < 12; i++) {
       const colorSide = Math.floor(i / 2) % 2;
       const shield = new Zdog.Shape({
@@ -293,10 +299,12 @@ const FloatingKirby: React.FC = () => {
         color: colorSide ? red : "white",
         fill: true,
       });
+
       shields.push(shield);
     }
 
     const floaterStars: Zdog.Shape[] = [];
+
     for (let i = 0; i < 6; i++) {
       const starHolder = new Zdog.Anchor({
         addTo: umbrella,
@@ -307,12 +315,12 @@ const FloatingKirby: React.FC = () => {
         addTo: starHolder,
         translate: { z: 28 },
       });
+
       floaterStars.push(floaterStar);
     }
 
-
-
     let animationId: number;
+
     function animate() {
       illo.rotate.y += isSpinning ? -0.03 : 0;
       illo.updateRenderGraph();
@@ -321,27 +329,24 @@ const FloatingKirby: React.FC = () => {
 
     animate();
 
-
     setTimeout(() => {
-      isSpinning = false; 
-      cancelAnimationFrame(animationId); 
+      isSpinning = false;
+      cancelAnimationFrame(animationId);
       umbrella.removeChild(rightArm);
-    
+
       umbrella.visible = false;
       handle.visible = false;
 
       shields.forEach((shield) => (shield.visible = false));
       floaterStars.forEach((star) => (star.visible = false));
 
-      
       star.visible = false;
 
-      
       illo.updateRenderGraph();
 
-      
       const kirbyElement = kirbyRef.current;
       const zdogCanvas = canvasRef.current!;
+
       if (kirbyElement) {
         kirbyElement.classList.add("visible");
         zdogCanvas.classList.add("fade-out");
@@ -352,17 +357,17 @@ const FloatingKirby: React.FC = () => {
   return (
     <div className="wrapper flex justify-center">
       <canvas
-        className="zdog-canvas absolute top-0 left-[0] w-full h-full block transition-opacity ease-out duration-[1s] z-100"
         ref={canvasRef}
-      ></canvas>
+        className="zdog-canvas absolute top-0 left-[0] w-full h-full block transition-opacity ease-out duration-[1s] z-100"
+      />
       <div
-        className="kirby flex absolute top-[40%] right-[38%] margin-0 opacity-0 z-40 transition-opacity ease-in-out duration-[1s] transform translate-x-0 animate-[moveRight_3s_ease-in-out_4.5s_forwards] "
         ref={kirbyRef}
+        className="kirby flex absolute top-[40%] right-[38%] margin-0 opacity-0 z-40 transition-opacity ease-in-out duration-[1s] transform translate-x-0 animate-[moveRight_3s_ease-in-out_4.5s_forwards] "
       >
         <Image
+          alt="picture of kirby"
           className="kirbyPic w-[24vw] max-lg:w-[30vw] h-[25vw] max-lg:h-[31vw] transform -scale-x-100 max-sm:opacity-0"
           src={KirbyPic}
-          alt="picture of kirby"
         />
       </div>
     </div>
