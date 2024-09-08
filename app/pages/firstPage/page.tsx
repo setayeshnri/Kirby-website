@@ -47,10 +47,10 @@ export default function Page() {
           src={h1Pic}
         />{" "}
         <p className="text-white w-[29%] text-[1.4vw] max-sm:text-[4.5vw] max-lg:text-[2.7vw] max-sm:w-[60%] max-lg:w-[52%] h-36 font-medium z-40">
-          Don’t let the adorable face fool you—this powerful, pink puff can pack
-          a punch! Since 1992, Kirby has been battling baddies across dozens of
-          games. With his unique abilities, Kirby is always finding new ways to
-          take on troublemakers.
+          Don&apos;t let the adorable face fool you—this powerful, pink puff can
+          pack a punch! Since 1992, Kirby has been battling baddies across
+          dozens of games. With his unique abilities, Kirby is always finding
+          new ways to take on troublemakers.
         </p>
         <div className="  mt-[9vw] max-2xl:mt-[5vw] max-lg:mt-[11%] max-sm:relative max-sm:m-auto ">
           <Link href="/pages/about">

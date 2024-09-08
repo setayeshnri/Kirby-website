@@ -1,6 +1,14 @@
+'use client'
 import styles from "@/styles/kirby.module.css";
-
+import MyButton from "@/components/button";
+import { useEffect,useRef } from "react";
 const Page = () => {
+  const btnRef = useRef<HTMLButtonElement| null>(null);
+  useEffect(()=>{
+if(btnRef.current){
+  btnRef.current.innerHTML='Click to Chat'
+}
+  },[])
   return (
     <div className="bg-[url('/clouds.png')] h-[100vh] bg-cover flex flex-row justify-around mt-[-70px]">
       <div className="relative top-32 left-36 z-10 h-52">
@@ -33,7 +41,7 @@ const Page = () => {
           Oh, Hi!!
           <br />I am Kirby, Let&apos;s chat!
         </p>
-        <div />
+      <MyButton btnRef={btnRef}/>
       </div>
     </div>
   );

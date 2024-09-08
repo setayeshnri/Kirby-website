@@ -23,8 +23,8 @@ export default function HomePage() {
           className=" z-10 w-full mt-[-5px]"
           src={curve2}
         />
-       
-      </div> <ThirdPage/>
+       <ThirdPage/>
+      </div> 
     </section>
   );
 }
