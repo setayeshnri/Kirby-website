@@ -24,7 +24,7 @@ const FloatingKirby: React.FC = () => {
       dragRotate: false,
       //@ts-ignore 
       resize: "fullscreen",
-      // igonred due to zdog type declarations being wrong
+ // igonred due to zdog type declarations being wrong
       onDragStart: function () {
         isSpinning = false;
       },
