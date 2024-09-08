@@ -22,7 +22,9 @@ const FloatingKirby: React.FC = () => {
     const illo = new Zdog.Illustration({
       element: ".zdog-canvas",
       dragRotate: false,
+      //@ts-ignore 
       resize: "fullscreen",
+      // igonred due to zdog type declarations being wrong
       onDragStart: function () {
         isSpinning = false;
       },
