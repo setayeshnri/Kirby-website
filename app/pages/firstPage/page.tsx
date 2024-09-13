@@ -36,7 +36,7 @@ export default function Page() {
       <FloatingKirby />
       <div
         ref={page1Ref}
-        className="firstPage flex flex-col relative left-[20%] max-lg:left-[10%] top-[18vh] transition-opacity ease-in-out duration-[1s] max-sm:left-0  max-sm:top-16 max-sm:items-center"
+        className="opacity-0 firstPage flex flex-col relative left-[20%] max-lg:left-[10%] top-[18vh] transition-opacity ease-in-out duration-[1s] max-sm:left-0  max-sm:top-16 max-sm:items-center"
       >
         <h2 className="text-[1.1vw] max-sm:text-[2.5vw] max-lg:text-[1.9vw] font-medium  mb-9 max-sm:mb-3 text-white z-40 ">
           THIS PAGE IS DEDICATED TO KIRBY
