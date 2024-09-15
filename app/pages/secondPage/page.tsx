@@ -17,7 +17,7 @@ const Page = () => {
   }, []);
 
   return (
-    <div className="bg-[#F2D8DB] w-full h-[100vh] relative z-[1] mt-[-4px]">
+    <div id="secondPage" className="bg-[#F2D8DB] w-full h-[100vh] relative z-[1] mt-[-4px]">
       <div className="wave-border" />
       <h3 className=" mt-24 mb-[-50px] text-3xl font-extrabold text-center">
         Our Featured Game

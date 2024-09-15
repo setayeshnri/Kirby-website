@@ -1,16 +1,16 @@
-'use client'
+"use client";
 import styles from "@/styles/kirby.module.css";
 import MyButton from "@/components/button";
-import { useEffect,useRef } from "react";
+import { useEffect, useRef } from "react";
 const Page = () => {
-  const btnRef = useRef<HTMLButtonElement| null>(null);
-  useEffect(()=>{
-if(btnRef.current){
-  btnRef.current.innerHTML='Click to Chat'
-}
-  },[])
+  const btnRef = useRef<HTMLButtonElement | null>(null);
+  useEffect(() => {
+    if (btnRef.current) {
+      btnRef.current.innerHTML = "Click to Chat";
+    }
+  }, []);
   return (
-    <div className="bg-[url('/clouds.png')] h-[100vh] bg-cover flex flex-row justify-around mt-[-70px]">
+    <div id="thirdPage" className="bg-[url('/clouds.png')] h-[100vh] bg-cover flex flex-row justify-around mt-[-70px]">
       <div className="relative top-32 left-36 z-10 h-52">
         <div className={styles.body}>
           <div className={styles.face}>
@@ -41,7 +41,13 @@ if(btnRef.current){
           Oh, Hi!!
           <br />I am Kirby, Let&apos;s chat!
         </p>
-      <MyButton btnRef={btnRef}/>
+        <a
+          href="https://kirbygpt.netlify.app/"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <MyButton btnRef={btnRef} />
+        </a>
       </div>
     </div>
   );
