@@ -1,20 +1,21 @@
-import { forwardRef } from "react";
 import { Button } from "@nextui-org/button";
+import React from "react";
 
-interface buttonProps {
+interface ButtonProps {
   btnRef: React.RefObject<HTMLButtonElement>;
+  children: React.ReactNode;
 }
-const MyButton = forwardRef(({ btnRef }: buttonProps, ref) => {
+
+const MyButton: React.FC<ButtonProps> = ({ btnRef, children }) => {
   return (
     <Button
       ref={btnRef}
-      className="absolute button primaryBtn bg-primary-blue w-[16vw] max-sm:w-[35vw] h-16 max-md:h-12 z-100 rounded-[2.4rem] text-white text-2xl  max-xl:text-[2vw] max-sm:text-[4vw] font-extrabold tracking-wide shadow-[0px_2px_16px_0px_#00000030,inset_0px_-2px_4px_0px_#0000001a,inset_0px_4px_6px_0px_#ffffff42]
-  "
+      className="w-full	z-20 bg-primary-blue w-[16vw] h-16 max-md:h-12 z-10 rounded-3xl text-white text-2xl max-xl:text-[2vw] max-sm:text-[4vw] font-extrabold tracking-wide shadow-lg"
       style={{ fontFamily: '"M PLUS Rounded 1c", sans-serif' }}
-    />
+    >
+      {children}
+    </Button>
   );
-});
-
-MyButton.displayName = "MyButton";
+};
 
 export default MyButton;

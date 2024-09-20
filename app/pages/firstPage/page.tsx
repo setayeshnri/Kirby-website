@@ -1,63 +1,52 @@
 "use client";
+
+import { useEffect, useRef, useState } from "react";
 import Image from "next/image";
-import { useRouter } from "next/navigation";
 import Link from "next/link";
-import { useEffect, useRef } from "react";
 
 import Button from "@/components/button";
 import h1Pic from "@/public/home/h1.svg";
+import Stars from "@/app/animations/stars";
+import FloatingKirby from "@/app/animations/floatingKirby";
 
-import FloatingKirby from "../../animations/floatingKirby";
-import Stars from "../../animations/stars";
 export default function Page() {
-  const page1Ref = useRef<HTMLDivElement>(null);
-
-  useEffect(() => {
-    setTimeout(() => {
-      const page1 = page1Ref.current;
-
-      if (page1) {
-        page1.classList.add("visibility");
-      }
-    }, 5000);
-  }, []);
-  const router = useRouter();
+  const [isVisible, setIsVisible] = useState(false);
   const btnRef = useRef<HTMLButtonElement | null>(null);
 
   useEffect(() => {
-    if (btnRef.current) {
-      btnRef.current.innerHTML = "Learn More";
-    }
-  });
+    const timer = setTimeout(() => {
+      setIsVisible(true);
+    }, 5000);
+    return () => clearTimeout(timer);
+  }, []);
 
   return (
-    <div className="section1 h-[100vh] w-full ">
+    <div className="relative w-full h-screen">
       <Stars />
       <FloatingKirby />
       <div
-        ref={page1Ref}
-        className="opacity-0 firstPage flex flex-col relative left-[20%] max-lg:left-[10%] top-[18vh] transition-opacity ease-in-out duration-[1s] max-sm:left-0  max-sm:top-16 max-sm:items-center"
+        className={`${
+          isVisible ? "opacity-100" : "opacity-0"
+        } absolute top-[15%] left-0 w-full px-4 flex flex-col items-center transition-opacity duration-1000 ease-in-out z-[300]
+          sm:top-[25%] sm:left-[12%] sm:w-2/5 sm:items-start sm:px-0`}
       >
-        <h2 className="text-[1.1vw] max-sm:text-[2.5vw] max-lg:text-[1.9vw] font-medium  mb-9 max-sm:mb-3 text-white z-40 ">
-          THIS PAGE IS DEDICATED TO KIRBY
-        </h2>
-        <Image
-          alt={"header picture"}
-          className="ml-[-13] z-40 w-[24%] mb-3 max-sm:w-[65%] max-lg:w-[39%]"
-          src={h1Pic}
-        />{" "}
-        <p className="text-white w-[29%] text-[1.4vw] max-sm:text-[4.5vw] max-lg:text-[2.7vw] max-sm:w-[60%] max-lg:w-[52%] h-36 font-medium z-40">
-          Don&apos;t let the adorable face fool you—this powerful, pink puff can
-          pack a punch! Since 1992, Kirby has been battling baddies across
-          dozens of games. With his unique abilities, Kirby is always finding
-          new ways to take on troublemakers.
-        </p>
-        <div className="  mt-[9vw] max-2xl:mt-[5vw] max-lg:mt-[11%] max-sm:relative max-sm:m-auto ">
+        <section>
+          <h2 className="text-white font-medium text-center sm:text-left">
+            THIS PAGE IS DEDICATED TO KIRBY
+          </h2>
+          <Image alt="Kirby" src={h1Pic} />
+          <p className="text-white font-medium text-center sm:text-left">
+            Don't let the adorable face fool you—this powerful, pink puff can
+            pack a punch! Since 1992, Kirby has been battling baddies across
+            dozens of games. With his unique abilities, Kirby is always finding
+            new ways to take on troublemakers.
+          </p>
+        </section>
+        <section className="mt-4">
           <Link href="/pages/about">
-            {" "}
-            <Button btnRef={btnRef} />
+            <Button btnRef={btnRef}>Learn More</Button>
           </Link>
-        </div>
+        </section>
       </div>
     </div>
   );
