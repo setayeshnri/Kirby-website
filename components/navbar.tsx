@@ -28,12 +28,12 @@ export default function App() {
           </Link>
         </NavbarItem>
         <NavbarItem>
-          <Link className="text-lg" color="foreground" href="#secondPage">
+          <Link className="text-lg" color="foreground" href="/#secondPage">
             Games
           </Link>
         </NavbarItem>
         <NavbarItem>
-          <Link className="text-lg" color="foreground" href="#thirdPage">
+          <Link className="text-lg" color="foreground" href="/#thirdPage">
             ChatBot
           </Link>
         </NavbarItem>

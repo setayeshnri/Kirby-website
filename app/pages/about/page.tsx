@@ -61,7 +61,7 @@ const Page: React.FC = () => {
           </span>
 
           <span className=" mx-20 w-[30vw] ">
-            <Image className="w-[24vw]" src={kirby4} alt="kirby" />
+            <Image className="w-[23vw]" src={kirby4} alt="kirby" />
           </span>
         </div>
 
@@ -84,7 +84,7 @@ const Page: React.FC = () => {
           </span>
 
           <span className=" mx-20 w-[30vw] ">
-            <Image className="w-[24vw]" src={kirby4} alt="kirby" />
+            <Image className="w-[23vw]" src={kirby4} alt="kirby" />
           </span>
         </div>
       </div>
