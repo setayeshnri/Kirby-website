@@ -21,15 +21,6 @@ export default function Page() {
   }, []);
 
 
-  const btnRef = useRef<HTMLButtonElement | null>(null);
-
-  useEffect(() => {
-    if (btnRef.current) {
-      btnRef.current.innerHTML = "Learn More";
-    }
-  });
-
-
   return (
     <div className="relative w-full h-screen">
       <Stars />
