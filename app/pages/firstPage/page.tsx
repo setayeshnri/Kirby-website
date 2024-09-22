@@ -1,6 +1,5 @@
 "use client";
 import Image from "next/image";
-import { useRouter } from "next/navigation";
 import Link from "next/link";
 import { useEffect, useRef } from "react";
 
@@ -21,7 +20,7 @@ export default function Page() {
       }
     }, 5000);
   }, []);
-  const router = useRouter();
+
   const btnRef = useRef<HTMLButtonElement | null>(null);
 
   useEffect(() => {
