@@ -20,6 +20,16 @@ export default function Page() {
     return () => clearTimeout(timer);
   }, []);
 
+
+  const btnRef = useRef<HTMLButtonElement | null>(null);
+
+  useEffect(() => {
+    if (btnRef.current) {
+      btnRef.current.innerHTML = "Learn More";
+    }
+  });
+
+
   return (
     <div className="relative w-full h-screen">
       <Stars />
