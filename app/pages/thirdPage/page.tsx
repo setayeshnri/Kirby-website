@@ -1,5 +1,6 @@
 "use client";
 import styles from "@/styles/kirby.module.css";
+import Link from "next/link";
 import MyButton from "@/components/button";
 import { useEffect, useRef } from "react";
 const Page = () => {
@@ -41,13 +42,10 @@ const Page = () => {
           Oh, Hi!!
           <br />I am Kirby, Let&apos;s chat!
         </p>
-        <a
-          href="https://kirbygpt.netlify.app/"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
+
+        <Link href="/pages/chatBot">
           <MyButton btnRef={btnRef} />
-        </a>
+        </Link>
       </div>
     </div>
   );
