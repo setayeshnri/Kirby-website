@@ -98,7 +98,7 @@ const Stars: React.FC = () => {
 
     const scaleCanvasForRetina = (
       canvas: HTMLCanvasElement,
-      context: CanvasRenderingContext2D,
+      context: CanvasRenderingContext2D
     ) => {
       const pixelRatio = window.devicePixelRatio || 1;
       const width = canvas.offsetWidth * pixelRatio;
@@ -115,7 +115,7 @@ const Stars: React.FC = () => {
       const context = canvas.getContext("2d")!;
       const stars = Array.from(
         { length: CONFIG.count },
-        () => new Star(canvas),
+        () => new Star(canvas)
       );
 
       const animate = () => {
@@ -147,7 +147,7 @@ const Stars: React.FC = () => {
 
   return (
     <canvas
-      className="absolute w-full h-[102vh] z-20  bg-background"
+      className="absolute w-full h-[102vh] z-0 bg-background"
       id="stars"
     />
   );

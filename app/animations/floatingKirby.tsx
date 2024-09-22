@@ -22,7 +22,7 @@ const FloatingKirby: React.FC = () => {
     const illo = new Zdog.Illustration({
       element: ".zdog-canvas",
       dragRotate: false,
-      //@ts-ignore 
+      //@ts-ignore
       resize: "fullscreen",
       // igonred due to zdog type declarations being wrong
       onDragStart: function () {
@@ -215,7 +215,7 @@ const FloatingKirby: React.FC = () => {
             throw new Error("Function not implemented.");
           },
           multiply: function (
-            position?: number | Zdog.VectorOptions,
+            position?: number | Zdog.VectorOptions
           ): Zdog.Vector {
             throw new Error("Function not implemented.");
           },
@@ -227,7 +227,7 @@ const FloatingKirby: React.FC = () => {
           },
           lerp: function (
             position: Zdog.VectorOptions,
-            alpha: number,
+            alpha: number
           ): Zdog.Vector {
             throw new Error("Function not implemented.");
           },
@@ -357,7 +357,7 @@ const FloatingKirby: React.FC = () => {
   }, []);
 
   return (
-    <div className="wrapper flex justify-center">
+    <div className="wrapper flex justify-center z-0">
       <canvas
         ref={canvasRef}
         className="zdog-canvas absolute top-0 left-[0] w-full h-full block transition-opacity ease-out duration-[1s] z-[90]"
