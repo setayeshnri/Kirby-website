@@ -28,15 +28,15 @@ export default function Page() {
       <div
         className={`${
           isVisible ? "opacity-100" : "opacity-0"
-        } absolute top-[15%] left-0 w-full px-4 flex flex-col items-center transition-opacity duration-1000 ease-in-out z-[300]
-          sm:top-[25%] sm:left-[12%] sm:w-2/5 sm:items-start sm:px-0`}
+        } absolute top-[15%] left-0 w-full px-4 flex flex-col items-center transition-opacity duration-1000 ease-in-out z-[90]
+          md:top-[25%] md:left-[12%] md:w-2/5 md:items-start md:px-0`}
       >
         <section>
-          <h2 className="text-white font-medium text-center sm:text-left">
+          <h2 className="text-white font-medium text-center md:text-left">
             THIS PAGE IS DEDICATED TO KIRBY
           </h2>
-          <Image alt="Kirby" src={h1Pic} />
-          <p className="text-white font-medium text-center sm:text-left">
+          <Image alt="Kirby" src={h1Pic} className="max-md:m-auto max-sm:w-[70%]"/>
+          <p className="text-white font-medium text-center md:text-left max-md:w-[65%] max-md:m-auto xl:text-[1vw]">
             Don't let the adorable face fool you—this powerful, pink puff can
             pack a punch! Since 1992, Kirby has been battling baddies across
             dozens of games. With his unique abilities, Kirby is always finding

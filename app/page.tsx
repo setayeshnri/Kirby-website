@@ -14,7 +14,7 @@ export default function HomePage() {
       <Image
         id="secondPage"
         alt="curve divider"
-        className="w-full mt-[-5px] bg-[#F2D8DB] pb-9"
+        className="w-full mt-[-0.2vw] max-md:mt-[0.8vw]  bg-[#F2D8DB] pb-9"
         src={curve1}
       />
       <SecondPage />

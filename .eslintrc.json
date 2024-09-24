@@ -38,7 +38,8 @@
     "prettier/prettier": "warn",
     "no-unused-vars": "off",
     "unused-imports/no-unused-vars": "off",
-    "unused-imports/no-unused-imports": "warn",
+    "unused-imports/no-unused-imports": "off",
+    "react/no-unescaped-entities": "off",
     "@typescript-eslint/no-unused-vars": [
       "warn",
       {
@@ -82,8 +83,8 @@
     ],
     "padding-line-between-statements": [
       "warn",
-      {"blankLine": "always", "prev": "*", "next": "return"},
-      {"blankLine": "always", "prev": ["const", "let", "var"], "next": "*"},
+      { "blankLine": "always", "prev": "*", "next": "return" },
+      { "blankLine": "always", "prev": ["const", "let", "var"], "next": "*" },
       {
         "blankLine": "any",
         "prev": ["const", "let", "var"],

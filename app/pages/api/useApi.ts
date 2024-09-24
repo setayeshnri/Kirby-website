@@ -44,7 +44,7 @@ export default function useApi() {
         setMessages((prev) => [
           ...prev,
           userMessage,
-          { role: "assistant", content: `Error: ${error.message}` },
+          { role: "assistant", content: `Error: ${(error as Error).message}` },
         ]);
       } else {
         setMessages((prev) => [
