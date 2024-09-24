@@ -2,7 +2,7 @@
 import QuestionBox from "@/components/questionBox";
 import TextBox from "@/components/textBox";
 import useApi from "../api/useApi";
-import KirbyAnimation from "@/app/animation/page";
+import KirbyAnimation from "@/app/animations/page";
 const Home: React.FC = () => {
   const { messages, sendMessage } = useApi();
   const filteredMessages = messages.filter(

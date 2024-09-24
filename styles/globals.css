@@ -24,30 +24,30 @@ html{
     transform: translateX(0);
   }
   100% {
-    transform: translateX(15vw) translateY(-250px);
+    transform: translateX(19vw) translateY(-13vw);
   }
 }
 .button.clickBtn {
   margin: auto;
 }
 
+@media (max-width: 1600px) {
+  @keyframes moveRight {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(19vw) translateY(-18vw);
+    }
+  }
+}
 @media (max-width: 1200px) {
   @keyframes moveRight {
     0% {
       transform: translateX(0);
     }
     100% {
-      transform: translateX(15vw) translateY(-230px);
-    }
-  }
-}
-@media (max-width: 1024px) {
-  @keyframes moveRight {
-    0% {
-      transform: translateX(0);
-    }
-    100% {
-      transform: translateX(26vw) translateY(-16vw);
+      transform: translateX(26vw) translateY(-23vw);
     }
   }
 }

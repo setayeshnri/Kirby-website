@@ -368,7 +368,7 @@ const FloatingKirby: React.FC = () => {
       >
         <Image
           alt="picture of kirby"
-          className="kirbyPic w-[24vw] max-lg:w-[30vw] h-[25vw] max-lg:h-[31vw] transform -scale-x-100 max-sm:opacity-0"
+          className="kirbyPic w-[24vw] xl:w-[23vw]  max-lg:w-[30vw] h-[25vw] max-lg:h-[31vw] transform -scale-x-100 max-md:hidden "
           src={KirbyPic}
         />
       </div>
