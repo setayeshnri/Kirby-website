@@ -2,7 +2,7 @@ import styles from "@/styles/kirby.module.css";
 
 const KirbyAnimation = () => {
   return (
-    <div className="!fixed top-[17vw] left-[4vw] z-10 h-52 max-lg:hidden">
+    <div className=" relative top-[17vw] left-[4vw] z-10 h-52 max-lg:hidden">
       <div className={styles.body}>
         <div className={styles.face}>
           <div className={styles.eyes}>
