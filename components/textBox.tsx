@@ -12,7 +12,7 @@ const TextBox: React.FC<TextBoxProps> = ({ conversation }) => {
     scrollBottom();
   }, [conversation]);
   return (
-    <div className="message overflow-y-auto h-[32vw] mt-[0.4vw]">
+    <div className="message overflow-y-auto h-[32vw] mb-3 max-lg:h-fit rounded-3xl">
       {conversation.map((msg, index) => (
         <p
           key={index}
