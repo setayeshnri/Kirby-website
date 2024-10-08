@@ -23,7 +23,7 @@ const QuestionBox: React.FC<QuestionBoxProps> = ({ onSend }) => {
   };
 
   return (
-    <div className=" bg-white rounded-full w-[31vw] flex flex-row justify-between p-[0.3vw] mt-[2.6vw] max-lg:w-[65vw] max-lg:h-[7vw] max-lg:m-auto">
+    <div className=" bg-white rounded-full w-[31vw] flex flex-row justify-between p-[0.3vw]  max-lg:w-[65vw] max-lg:h-[7vw] self-end">
       <input
         className="w-[24vw] relative z-10 rounded-full left-[1vw] focus:outline-none text-[1.5vw] max-lg:text-[3.3vw]"
         type="text"
